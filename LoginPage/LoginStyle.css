@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   
+    background: url("LoginPage/Util/bcg.jpg") ;
+    background-size: cover;
+    font-family: sans-serif;
+}
+.error{
+    color: yellow;
+    font-style: italic;
+}
+.Wrapper{
+height: 100vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.form{
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 2rem;
+    color: white;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+
+}
+.form::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2rem;
+    /* jer je ovo nesto iznad form pa moramo da stavimo da je unclickable */
+    pointer-events: none;
+}
+.form h1{
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: red;
+}
+ input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    transition:  500ms ease-out;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 1px solid red;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.SubmintButton{
+    border-color: red;
+    border: solid;
+    width: 50%;
+    float: right;
+    border: red solid;
+    border-radius: 0.5rem;
+}
+label{
+    transition: 500ms ease-out;
+}
+
+.inputUsername label{
+position: absolute;
+left: 0;
+margin-left: 10%;
+padding: 10px 0;
+}
+
+.inputPassword label{
+    position: absolute;
+    left: 0;
+    margin-left: 10%;
+    padding: 10px 0;
+    }
+
+  
+    input:focus + label{
+        transform: translateY(-14px);
+        color: rgba(244,10,10,0.8);
+    }
+
+
+    .SubmintButton:focus{
+        background-color: red;
+    }
+   

@@ -1,0 +1,883 @@
+:root{
+    --blue: #1e90ff;
+    --PrimaryColor: black;
+    --SecondaryColor: #8C050B;
+}
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+    
+}
+
+body::-webkit-scrollbar{
+    background-color: var(--PrimaryColor);
+    border: var(--SecondaryColor) solid;
+
+}
+body::-webkit-scrollbar-button{
+    background-color: var(--SecondaryColor);
+    border-radius: 2rem;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: var(--SecondaryColor);
+    border-radius: 2rem;
+}
+
+button{
+    outline: none;
+   
+}
+
+ a{
+    text-decoration: none;
+   color: inherit;
+}
+ul{
+    list-style: none;
+}
+p{
+    z-index: 2;
+    transition:  1000ms ease-in;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+ 
+
+    
+}
+.stopScroll{
+    
+    overflow: hidden;
+}
+
+.Container1{
+    
+    height: 100vh;
+   
+    min-width: 100%;
+    display: grid;
+    margin: 0;
+    padding: 0;
+   
+    background: url(Util/pozadina.png);
+    background-size: cover;
+        background-position: center;
+    z-index: -1;
+   grid-template-rows:4fr 1fr  auto;
+  
+   
+}
+
+.Container1 h1{
+    display: flex;
+    justify-content: center;
+    font-size: 8rem;
+  padding: 0;
+  font-family:  Berlin Sans FB;
+  color: black;
+   
+  
+}
+.Slide1{
+   position: absolute;
+    display: grid;
+    
+    animation:  anim1 2s ease forwards 2s; 
+    place-items: center;
+   
+    background-color: #3B2121;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 7;
+    margin: 0;
+}
+@keyframes anim1
+{
+    0%{
+        transform: translateY(0);
+    }
+    99%{
+    transform: scale(1);
+    transform: translateY(99%);
+    }
+    100%{
+        transform: translateY(100%);
+        transform: scale(0);
+    }
+}
+
+.Slide2{
+    position: absolute;
+
+    z-index:6;
+    display: grid;
+    place-items: center;
+     animation:  anim2 1s ease forwards 4s; 
+    background-color: #2E2C2C;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    top: 0;
+}
+@keyframes anim2{
+    0%{
+        transform: translateX(0);
+    }
+    99%{
+    transform: scale(1);
+    transform: translateX(99%);
+    }
+    100%{
+        transform: translateX(100%);
+        transform: scale(0);
+    }
+}
+.textSlide1{
+
+    margin: 3rem;
+    animation: animtext1 1s forwards ;
+}
+@keyframes animtext1
+{
+    0%{
+        transform: scale(0);
+    }
+    10%{
+        transform: scale(100%);
+    }
+}
+
+
+
+
+
+
+.slikeOpisa
+{
+  
+    display: grid;
+    place-items: center;
+}
+
+.ImageOnBeginning.ReadyToAnimate{
+    opacity: 1;
+}
+.ImageOnBeginning{
+	width:50%;
+    opacity: 0;
+   
+margin-left: auto;
+margin-right: auto;
+  margin-top: 10rem;
+ 
+    transition: 2000ms ease 5000ms; 
+    animation-delay: 1000ms;
+}
+.topBar{
+    background-image: linear-gradient(to left,var(--SecondaryColor),var(--PrimaryColor));
+    position: fixed;
+    display: flex;
+    width: 0%;
+   
+  animation: animTopBar 1s cubic-bezier(.93,.58,.82,.21) forwards 5s;
+    z-index: 5;
+    
+    justify-content: flex-end;
+}
+@keyframes animTopBar{
+    0%{
+        width: 0;
+     
+    }
+    100%{
+        width: 100%;
+       
+    }
+}
+.bottomBar{
+    margin-top: auto;
+    background: var(--SecondaryColor);
+   width: 0;
+    border: none;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    transform: scale(1);
+    transition: 1000ms ease;
+  
+   
+    margin-left: auto;
+    animation: animBottomBar 1s ease forwards 5.5s ;
+    
+ 
+}
+@keyframes animBottomBar{
+0%{
+    width: 0%;
+}
+100%{
+    width: 50vh;
+}
+}
+
+.bottomBar.ReadyToScroll{
+   
+    transform: scale(0);
+    
+   
+}
+
+#ListTopBar{
+
+    display: flex;
+   
+   
+}
+
+
+#ListBottomBar{
+   
+    width: 50%;
+    display: flex;
+}
+.ButtonCont1{
+    
+    color: white;
+    margin-right: 5rem;
+    padding: 0.5rem 0.5px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    width:5rem;
+    transition: 500ms ease;
+   
+  
+    font-size: 1.5rem;
+  
+}
+
+.ButtonCont1::after{
+    display: block;
+    content: '';
+    border-bottom:  white solid;
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.ButtonCont1:hover::after{
+    transform: scaleX(1);
+}
+
+
+
+.ButtonCont1:hover{
+   
+    color: gray ;
+   
+}
+
+/* Sekcija 2 */
+.Container2{
+    height:  100vh;
+    display: flex;
+    background-color: var(--PrimaryColor);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+    justify-content: center;
+}
+
+.Container2 img{
+   
+  height: 100vh;
+  width: 100%;
+    background: center;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0;
+    
+    transition:  4000ms ease;
+    position: absolute;
+   
+}
+
+
+
+.Container2 img.ReadyToScroll{
+    opacity: 1;
+}
+
+#textUProzoru1{
+    
+    color: white;
+   margin-top:8rem;
+    font-size: 5rem;
+    position: absolute;
+}
+
+.textonLoadPage2{
+	
+    opacity: 0;
+    transition: 1000ms ease-in;
+}
+
+#textUProzoru2{
+ 
+    color: white;
+    margin-top:10rem;
+    font-size: 5rem;
+    position: absolute;
+}
+.textonLoadPage2.ReadyToScroll{
+
+    opacity: 1;
+}
+
+/* Sekcija 3 */
+.Container3{
+    background: var(--PrimaryColor);
+    display: grid;
+
+    grid-template-columns: auto 1fr;
+    height: 100vh;
+   
+}
+.cardPage{
+    display: flex;
+    flex-direction: column;
+}
+.ImagePage3{
+    height: 100vh;
+    border-radius: 100px;
+    padding: 5rem;
+}
+.ImagePopcornPage3{
+   position: absolute;
+   align-self:  center;
+  
+   margin-top: 22rem;
+}
+.textSide p {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.textSide{
+    align-self: center;
+    justify-self: center;
+    font-size: 5rem;
+    text-shadow: 2px 2px white;
+}
+.backCard{
+    width: 0%;
+    transition-delay: 4000ms;
+  
+    transition: 2000ms cubic-bezier(0,1.52,1,1.01);
+}
+.backCard.ReadyToScroll{
+    width: 100%;
+}
+
+
+
+
+
+.textp1Slide.ReadyToScroll{
+    animation: animacija1 2000ms forwards cubic-bezier(1,.53,1,.39);
+}
+@keyframes animacija1{
+    0%{
+       opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* 
+Sekcija 4 */
+.Container4{
+background-color: var(--PrimaryColor);
+    display: grid;
+    height: 100vh;
+grid-template-rows: 1fr 1fr;
+ 
+   
+}
+.slikeTop{
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+
+    justify-content: space-around;
+   
+
+}
+.slikeTop img{
+ width: 80%;
+}
+.text{
+
+    position: absolute;
+display: flex;
+
+padding: 0;
+margin-left: 35rem;
+margin-top: 25rem;
+flex-direction: column;
+justify-content: center;
+}
+
+
+.text h1{
+    
+    height:  70%;
+    color: white;
+ display: flex;
+justify-content: center;
+    font-weight: bold;
+    font-size: 3rem;
+
+
+}
+
+.imgCont4{
+    transition: 2000ms ease;
+    transform: scale(0);
+}
+.imgCont4.ReadyToScroll{
+    transform: scale(1);
+}
+
+/* Sekcija 5 */
+.Container5{
+    height: 100vh;
+    background: var(--PrimaryColor);
+    display: grid;
+    grid-template-rows:  1fr  1fr auto;
+}
+.textTop{
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 4.4rem;
+    background-color: var(--PrimaryColor);
+}
+.buttonsCont5{
+    background-color: var(--PrimaryColor);
+    display: flex;
+    align-items: center;
+ 
+    justify-content: space-around;
+}
+.bottombarCont5{
+    color: var(--SecondaryColor);
+    display: grid;
+    grid-template-columns: auto auto;
+   
+    justify-content: end;
+
+    background-color:#bdbdbd;
+    
+    padding: 0  2rem;
+}
+
+.elementsofBottomCont5{
+margin: 0.5rem;
+}
+.bottombarCont5 img{
+    display: grid;
+    place-self: center;
+}
+
+.ButtonCont5{
+    width:20%;
+  
+    height: 20%;
+    border-radius: 2rem;
+    background-color: var(--SecondaryColor);
+   box-shadow:  0 4px 4px  1px black;
+    border: none;
+    color: white;
+    font-size: xx-large;
+    transition:  250ms ease-in ;
+}
+.ButtonCont5::after{
+    display: block;
+    content: '';
+    border:  white solid;
+    transform: scaleX(0);  
+    transition: transform 250ms cubic-bezier(1,.51,.64,.03);
+}
+.ButtonCont5::before{
+    display: block;
+    content: '';
+    border:  white solid;
+    transform: scaleX(0);  
+    transition: transform 250ms cubic-bezier(1,.51,.64,.03);
+}
+
+.ButtonCont5:hover::after{
+    transform: scaleX(1);
+}
+.ButtonCont5:hover::before{
+    transform: scaleX(1);
+}
+.ButtonCont5:hover{
+    background-color: transparent;
+}
+
+/* Statistika */
+.Statistics{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #bdbdbd;
+}
+.card1,.card2,.card3{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-content: center;
+    
+}
+.Statistics img{
+   margin: auto;
+   margin-top: 20px;
+}
+.Statistics p{
+    font-size: xx-large;
+    color: var(--SecondaryColor);
+}
+
+
+
+@media screen and (max-width: 1080px) {
+	
+	#textUProzoru1{
+		font-size:2rem;
+	}
+		#textUProzoru2{
+				font-size:2rem;
+	}
+	.ImagePopcornPage3{
+       
+        margin-top: 2rem;
+    }
+	.textSide p{
+		font-size:4.5rem;
+	}
+	.Slide1 h1{
+		font-size:4rem;
+	}
+	
+	.Slide2 h1{		font-size:4rem;
+
+		
+		
+	}
+}
+
+
+@media screen and (max-width: 980px) {
+	
+	
+	
+    .Container1 h1{
+        font-size: 4rem;
+    }
+    .ImageOnBeginning{
+        width: 35%;
+    }
+    #textUProzoru1{
+      
+        font-size: 3rem;
+        margin-top: 10rem;
+    }
+    #textUProzoru2{
+        font-size: 3rem;
+        margin-top: 15rem;
+    }
+
+    .cardPage{
+     
+        height: 400px;
+        width: 500px;
+    }
+    .textSide p{
+       
+        font-size: 2.5rem;
+		margin-left:2rem;
+		
+    }
+    .ImagePopcornPage3{
+       
+        margin-top: 25rem;
+    }
+    .text{
+       
+        margin-left: 10rem;
+margin-top: 25rem;
+
+    }
+    .text h1{
+        font-size: 2.5rem;
+    }
+    .textTop{
+       
+        font-size: 2.5rem;
+    }
+    .Statistics p{
+        font-size: large;
+    }
+}
+
+
+
+
+
+
+  @media screen and (max-width: 480px) {
+	   
+    .Container1 h1{
+        font-size: 1rem;
+		
+    }
+    .ImageOnBeginning{
+        width: 30%;
+    }
+    #textUProzoru1{
+     
+        font-size: 1rem;
+    }
+    #textUProzoru2{
+        font-size: 1rem;
+    }
+    .ImagePopcornPage3{
+    
+        margin-top: 25rem;
+    }
+	.
+  }
+  @media (max-height:800px){
+	  
+    .ImagePopcornPage3{
+		
+      
+        
+        margin-top: 15rem;
+    }
+    #textUProzoru2{
+       
+         margin-top: 13rem;
+		 font-size:3.5rem;
+     }
+     #textUProzoru1{
+       		 font-size:3.5rem;
+
+         margin-top: 5rem;
+     }
+	 .text{
+        margin-top: 18rem;
+        margin-left: 28rem;
+    }
+   
+      }
+ 
+ @media   (max-width: 1100px) {
+	 
+	  #textUProzoru2{
+       
+         margin-top: 15rem;
+		 font-size:2.5rem;
+     }
+     #textUProzoru1{
+       		 font-size:2.5rem;
+
+         margin-top: 10rem;
+     }
+	 .text{
+        margin-top: 18rem;
+        margin-left: 12rem;
+    }
+	.textSide p{
+		font-size:3rem;
+	}
+ }
+
+ @media   (max-width: 900px) {
+	 
+	.ImagePopcornPage3{
+		margin-top:16rem;
+	}
+	  #textUProzoru1{
+      
+        font-size: 2rem;
+		margin-top:13rem
+    }
+    #textUProzoru2{
+        font-size: 2rem;
+				margin-top:18rem
+
+    }
+	
+  .text{
+	  margin-top:15rem;
+	  margin-left:13rem;
+  }
+  .textSide p {
+	  font-size:2rem;
+  }
+ }
+ 
+ 
+ 
+ 
+ @media (max-height:700px){
+	 
+    .ImagePopcornPage3{
+        
+        margin-top: 15rem;
+    }
+    #textUProzoru2{
+      
+         margin-top: 13rem;
+     }
+     #textUProzoru1{
+       
+        margin-top: 10rem;
+    }
+   
+    .text{
+        margin-top: 6rem;
+        margin-left: 2.5rem;
+    }
+  }
+  
+ 
+ @media (max-height:600px){
+
+
+
+    .ImagePopcornPage3{
+        
+        margin-top: 15rem;
+        width: 20%;
+    }
+    #textUProzoru2{
+      
+        font-size: 1.5rem;
+        margin-top: 11rem;
+    }
+    #textUProzoru1{
+        font-size: 1.5rem;
+        margin-top: 8rem;
+    }
+	.text h1{
+		font-size:2rem;
+		
+	}
+	.text{
+		margin-left:15rem;
+		margin-top:13rem;
+	}
+   
+   
+  }
+  
+  @media (max-height:450px){
+
+
+    .ImagePopcornPage3{
+        
+        margin-top: rem;
+        width: 15%;
+    }
+    #textUProzoru2{
+      
+        font-size: 1.5rem;
+        margin-top: 8rem;
+    }
+    #textUProzoru1{
+        font-size: 1.5rem;
+        margin-top: 5rem;
+    }
+	.text h1{
+		font-size:2rem;
+		
+	}
+	.text{
+		margin-left:15rem;
+		margin-top:10rem;
+	}
+   
+   
+  }
+  
+  @media   (max-width: 650px) {
+	
+	
+    .Container1 h1{
+        font-size: 3rem;
+    }
+    .ImageOnBeginning{
+        width: 30%;
+    }
+    #textUProzoru1{
+      
+        font-size: 1rem;
+    }
+    #textUProzoru2{
+        font-size: 1rem;
+    }
+    .ImagePage3{
+        
+        height: 100vh;
+        width: 300px;
+        padding: 0.5rem;
+
+    }
+    .cardPage{
+
+      
+        height: 300px;
+        width: 300px;
+        padding: 0.5rem;
+    }
+    .textSide{
+       
+        font-size: 2rem;
+    }
+    .ImagePopcornPage3{
+    
+        margin-top: 15rem;
+		width:30%;
+    }
+    .text{
+      
+        margin-left:8rem;
+		font-size:2rem;
+        margin-top: 14rem;
+    }
+    .text h1{
+        font-size: 1.2rem;
+    }
+    .textTop{
+       
+        font-size: 2rem;
+    }
+    .Statistics img{
+        
+    }
+    .Statistics p{
+        font-size: medium;
+    }
+	.textSide{
+       
+        font-size: 1rem;
+    }
+ }
+
+  
+  

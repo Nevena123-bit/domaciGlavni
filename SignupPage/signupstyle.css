@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin:  0;
+    padding: 0;
+    background-color: gray;
+ 
+}
+.mainContainer h2{
+    text-align: center;
+    color: red;
+    margin-bottom: 4rem;
+}
+.Cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.mainContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+    margin: 0 0 80px 0 ;
+    color: white;
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: 400px;
+}
+.radioButtons{
+    width: 100%;
+
+   display: flex;
+   justify-content: center;
+    text-align: center;
+}
+
+.customRadio input{
+    display: none;
+}
+.customRadio{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+.card{
+    transition:background-color 1000ms ease ;
+    margin:10px;
+    transform-style: preserve-3d;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 60%;
+    border: 3px solid transparent;
+    border-radius: 2rem;
+    position: relative;
+    text-align: center;
+    box-shadow:  0 0 20px black;
+    cursor: pointer;
+}
+
+.card ul{
+    width: 80%;
+    padding: 4rem;
+}
+
+.customRadio input:checked+.card{
+    border: red solid;
+}
+#card1:hover{
+    background-color: royalblue;
+}
+#card2:hover{
+    background-color: mediumpurple;
+}
+#card3:hover{
+    background-color: gold;
+}
+footer{
+    text-align: center;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+ display: flex;
+ justify-content: center;
+    border-radius: 2rem;
+    border: white solid;
+width: 100%;
+height: 10%;
+z-index: 3;
+transition: 500ms ease;
+background-color: teal;
+box-shadow:  0px -3px 15px black;
+padding: 0.5rem;
+}
+button{
+    z-index: 4;
+    
+    background: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    font-family: cursive;
+
+    color: white;
+    font-size: x-large;
+   
+    
+}
+
+@media   (max-width: 700px) , (max-height:750px){
+   
+    li{
+        font-size: large;
+        margin: 0;
+    }
+    P{
+        font-size: large;
+    }
+    ul{
+        padding: 0;
+    }
+    footer{
+        height: 30%;
+    }
+    .Cards{
+        display: flex;
+        flex-direction: column;
+    }
+  
+}
+
+
